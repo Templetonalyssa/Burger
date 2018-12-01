@@ -11,3 +11,5 @@ CREATE TABLE burgers
 	devoured BOOLEAN DEFAULT false,
 	PRIMARY KEY (id)
 );
+
+INSERT INTO burgers (burger_name) VALUES ('Cheeseburger'),('BBQ Burger'),('Veggie Burger');
