@@ -1,22 +1,22 @@
-{{!-- <img src = "./public"> --}}
+<img src = "/assets/img/burger.jpg">
 <h1>Eat Da Burger!</h1>
-
-<h2>Burgers that have been devoured</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#unless sleepy}}
-      {{> burgers/burger-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
 
 <h2>Burgers that have not been devoured</h2>
 
 <ul>
   {{#each burgers}}
-    {{#if sleepy}}
-      {{> burgers/burger-block sleep=false}}
+    {{#unless devoured}}
+      {{> burgers/burger-block devoured=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Burgers that have been devoured</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/burger-block devoured=false}}
     {{/if}}
   {{/each}}
 </ul>

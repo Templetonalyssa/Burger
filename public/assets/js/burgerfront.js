@@ -1,14 +1,14 @@
 $(function() {
-    $(".change-sleep").on("click", function(event) {
+    $(".devour-burger").on("click", function(event) {
       var id = $(this).data("id");
       var newBurger = $(this).data("newBurger");
   
       var newBurgerState = {
-        sleepy: newBurger
+        devoured: newBurger
       };
   
       // Send the PUT request.
-      $.ajax("/api/cats/" + id, {
+      $.ajax("/api/burgers/" + id, {
         type: "PUT",
         data: newBurgerState
       }).then(
@@ -27,7 +27,6 @@ $(function() {
       var newYummyBurger
        = {
         name: $("#ca").val(),
-        sleepy: $("[name=sleepy]:checked").val()
       };
   
       // Send the POST request.
@@ -44,19 +43,19 @@ $(function() {
       );
     });
   
-    $(".delete-cat").on("click", function(event) {
-      var id = $(this).data("id");
+    // $(".devour-burger").on("click", function(event) {
+    //   var id = $(this).data("id");
   
-      // Send the DELETE request.
-      $.ajax("/api/burgers/" + id, {
-        type: "DELETE"
-      }).then(
-        function() {
-          console.log("deleted burger", id);
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
-    });
+    //   // Send the DELETE request.
+    //   // $.ajax("/api/burgers/" + id, {
+    //   //   type: "PUT"
+    //   // }).then(
+    //   //   function() {
+    //   //     console.log("devoured burger", id);
+    //   //     // Reload the page to get the updated list
+    //   //     location.reload();
+    //   //   }
+    //   );
+    // });
   });
   

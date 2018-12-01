@@ -23,7 +23,8 @@ router.post("/api/burgers", function(req, res) {
     req.body.name, req.body.devoured
   ], function(result) {
     // Send back the ID of the new quote
-    res.json({ id: result.insertId });
+   // res.json({ id: result.insertId });
+   res.redirect("/");
   });
 });
 
@@ -33,7 +34,7 @@ router.put("/api/burgers/:id", function(req, res) {
   console.log("condition", condition);
 
   burger.update({
-    devoured: req.body.devoured
+    devoured: true
   }, condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
