@@ -43,19 +43,5 @@ $(function() {
       );
     });
   
-    // $(".devour-burger").on("click", function(event) {
-    //   var id = $(this).data("id");
-  
-    //   // Send the DELETE request.
-    //   // $.ajax("/api/burgers/" + id, {
-    //   //   type: "PUT"
-    //   // }).then(
-    //   //   function() {
-    //   //     console.log("devoured burger", id);
-    //   //     // Reload the page to get the updated list
-    //   //     location.reload();
-    //   //   }
-    //   );
-    // });
   });
   
